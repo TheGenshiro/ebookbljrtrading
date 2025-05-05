@@ -1,0 +1,1044 @@
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Ebook Trading Ultra
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Roboto+Slab:wght@400;700&amp;family=Open+Sans:wght@400;600&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      transition: background-color 0.5s ease;
+      scroll-behavior: smooth;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #a0aec0;
+      border-radius: 5px;
+    }
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #a0aec0 transparent;
+    }
+    .fade-in {
+      animation: fadeIn 0.6s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    .slide-down {
+      animation: slideDown 0.4s ease forwards;
+      transform-origin: top;
+      transform: scaleY(0);
+    }
+    .slide-down.open {
+      transform: scaleY(1);
+    }
+    @keyframes slideDown {
+      to {
+        transform: scaleY(1);
+      }
+    }
+    .btn-primary {
+      @apply bg-indigo-600 text-white font-semibold rounded-lg px-5 py-2 shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-400 transition;
+    }
+    .btn-secondary {
+      @apply bg-gray-200 text-gray-800 font-semibold rounded-lg px-4 py-2 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-300 transition;
+    }
+    .card {
+      @apply bg-white rounded-2xl shadow-2xl p-8 mb-10 transition-transform transform hover:scale-[1.03] hover:shadow-3xl;
+    }
+    h2, h3, h4 {
+      font-family: 'Roboto Slab', serif;
+    }
+    a {
+      @apply text-indigo-600 hover:text-indigo-900 underline transition;
+    }
+    .tooltip {
+      position: relative;
+      cursor: help;
+    }
+    .tooltip:hover .tooltip-text {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .tooltip-text {
+      position: absolute;
+      bottom: 125%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background-color: #4c51bf;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 50;
+      max-width: 320px;
+      text-align: center;
+      line-height: 1.3;
+    }
+    @media (min-width: 768px) {
+      .prose {
+        max-width: 100%;
+      }
+    }
+    /* Smooth scroll for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+ </head>
+ <body class="min-h-screen text-gray-900">
+  <div class="flex flex-col md:flex-row min-h-screen" id="app">
+   <nav aria-label="Sidebar Navigation" class="bg-white border-r border-gray-200 w-full md:w-80 flex-shrink-0 overflow-y-auto max-h-screen sticky top-0 z-40 shadow-lg" id="sidebar">
+    <div class="p-6 border-b border-gray-200 flex items-center justify-between">
+     <h1 class="text-3xl font-extrabold text-indigo-700 tracking-wide select-none">
+      Ebook Trading Pro
+     </h1>
+     <button aria-label="Tutup menu" class="md:hidden text-gray-600 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded" id="sidebar-close-btn" title="Tutup menu">
+      <i class="fas fa-times fa-lg"></i>
+     </button>
+    </div>
+    <ul class="px-6 py-6 space-y-3 text-gray-700 text-base font-medium select-none">
+     <li>
+      <button aria-controls="candlestick-submenu" aria-expanded="false" class="w-full flex justify-between items-center font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="candlestick-btn">
+       Memahami Candlestick
+       <i class="fas fa-chevron-down transition-transform duration-300"></i>
+      </button>
+      <ul aria-labelledby="candlestick-btn" class="mt-2 ml-5 space-y-1 max-h-0 overflow-hidden transition-all duration-400 origin-top" id="candlestick-submenu">
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="jenis-jenis-candlestick" data-topic="candlestick">
+         Jenis-jenis Candlestick
+        </button>
+       </li>
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="pola-candlestick" data-topic="candlestick">
+         Pola Candlestick
+        </button>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <button aria-controls="teknikal-submenu" aria-expanded="false" class="w-full flex justify-between items-center font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="teknikal-btn">
+       Analisis Teknikal
+       <i class="fas fa-chevron-down transition-transform duration-300"></i>
+      </button>
+      <ul aria-labelledby="teknikal-btn" class="mt-2 ml-5 space-y-1 max-h-0 overflow-hidden transition-all duration-400 origin-top" id="teknikal-submenu">
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="indikator-teknikal" data-topic="teknikal">
+         Indikator Teknikal
+        </button>
+       </li>
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="chart-pattern" data-topic="teknikal">
+         Chart Pattern
+        </button>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <button aria-controls="risiko-submenu" aria-expanded="false" class="w-full flex justify-between items-center font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="risiko-btn">
+       Manajemen Risiko
+       <i class="fas fa-chevron-down transition-transform duration-300"></i>
+      </button>
+      <ul aria-labelledby="risiko-btn" class="mt-2 ml-5 space-y-1 max-h-0 overflow-hidden transition-all duration-400 origin-top" id="risiko-submenu">
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="pengaturan-stop-loss" data-topic="risiko">
+         Pengaturan Stop-Loss
+        </button>
+       </li>
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="manajemen-posisi" data-topic="risiko">
+         Manajemen Posisi
+        </button>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <button aria-controls="strategi-submenu" aria-expanded="false" class="w-full flex justify-between items-center font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="strategi-btn">
+       Strategi Trading
+       <i class="fas fa-chevron-down transition-transform duration-300"></i>
+      </button>
+      <ul aria-labelledby="strategi-btn" class="mt-2 ml-5 space-y-1 max-h-0 overflow-hidden transition-all duration-400 origin-top" id="strategi-submenu">
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="strategi-breakout" data-topic="strategi">
+         Strategi Breakout
+        </button>
+       </li>
+       <li>
+        <button class="submenu-item w-full text-left hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-1 transition" data-subtopic="strategi-reversal" data-topic="strategi">
+         Strategi Reversal
+        </button>
+       </li>
+      </ul>
+     </li>
+     <li>
+      <button class="w-full font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="glosarium-btn">
+       Glosarium Istilah Trading
+      </button>
+     </li>
+     <li>
+      <button class="w-full font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="referensi-btn">
+       Referensi &amp; Sumber Daya
+      </button>
+     </li>
+     <li>
+      <button class="w-full font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="template-btn">
+       Template Trading Plan
+      </button>
+     </li>
+     <li>
+      <button class="w-full font-semibold hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md px-2 py-2 transition" id="settings-btn">
+       Pengaturan
+      </button>
+     </li>
+    </ul>
+   </nav>
+   <main aria-atomic="true" aria-live="polite" class="flex-1 p-10 max-w-full overflow-y-auto max-h-screen bg-gradient-to-b from-white to-indigo-50" id="content" tabindex="0">
+    <section aria-label="Halaman Selamat Datang" class="max-w-6xl mx-auto fade-in" id="welcome">
+     <h2 class="text-5xl font-extrabold text-indigo-700 mb-8 tracking-wide drop-shadow-md">
+      Selamat Datang di Ebook Trading Pro
+     </h2>
+     <p class="mb-8 text-2xl leading-relaxed text-gray-800">
+      Ebook ini adalah panduan trading paling lengkap dan mendalam yang pernah Anda temui. Kami membahas segala aspek trading mulai dari dasar hingga strategi lanjutan, manajemen risiko, dan psikologi trading. Ebook ini dirancang untuk membantu Anda menjadi trader profesional dengan pemahaman yang kuat dan kemampuan analisis yang tajam.
+     </p>
+     <p class="mb-10 text-xl leading-relaxed text-gray-700">
+      Gunakan menu di sebelah kiri untuk menavigasi topik-topik utama dan subtopik yang sangat detail. Anda juga dapat mengatur tampilan ebook sesuai preferensi di bagian Pengaturan agar pengalaman membaca semakin nyaman.
+     </p>
+     <div aria-label="Ilustrasi grafik candlestick modern dengan warna biru dan hijau menunjukkan pergerakan harga saham di layar komputer" class="relative rounded-3xl overflow-hidden shadow-3xl mx-auto max-w-5xl">
+      <img alt="Ilustrasi grafik candlestick modern dengan warna biru dan hijau menunjukkan pergerakan harga saham di layar komputer" class="w-full h-auto object-cover" decoding="async" height="500" loading="lazy" src="https://storage.googleapis.com/a1aa/image/2a494a5d-f44d-4a02-7486-edeef80044f7.jpg" width="1000"/>
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-indigo-900/80 to-transparent p-8 rounded-b-3xl">
+       <h3 class="text-white text-3xl font-extrabold drop-shadow-lg">
+        Grafik Candlestick Modern
+       </h3>
+       <p class="text-indigo-200 mt-2 text-lg max-w-3xl">
+        Visualisasi pergerakan harga saham dengan warna biru dan hijau yang membantu trader memahami dinamika pasar secara real-time.
+       </p>
+      </div>
+     </div>
+    </section>
+    <section aria-atomic="true" aria-live="polite" class="max-w-6xl mx-auto mt-12 prose prose-indigo prose-xl fade-in" id="topic-content" tabindex="0"></section>
+    <div aria-labelledby="settings-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-8 hidden z-50" id="settings-modal" role="dialog">
+     <div class="bg-white rounded-3xl shadow-3xl max-w-xl w-full p-10 relative animate-fadeIn">
+      <h3 class="text-3xl font-extrabold text-indigo-700 mb-8 tracking-wide select-none" id="settings-title">
+       Pengaturan Tampilan
+      </h3>
+      <form class="space-y-8" id="settings-form" novalidate>
+       <div>
+        <label class="block font-semibold text-gray-700 mb-3 text-lg" for="font-select">
+         Pilih Font
+        </label>
+        <select aria-describedby="font-select-desc" class="w-full border border-gray-300 rounded-2xl px-6 py-4 text-lg focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" id="font-select">
+         <option selected value="'Inter', sans-serif">Inter (Default)</option>
+         <option value="'Roboto Slab', serif">Roboto Slab (Serif)</option>
+         <option value="'Open Sans', sans-serif">Open Sans</option>
+         <option value="'Merriweather', serif">Merriweather (Serif)</option>
+         <option value="'Lato', sans-serif">Lato</option>
+        </select>
+        <p class="text-sm text-gray-500 mt-2" id="font-select-desc">
+         Pilih font yang paling nyaman untuk mata Anda saat membaca.
+        </p>
+       </div>
+       <div>
+        <label class="block font-semibold text-gray-700 mb-3 text-lg" for="font-size">
+         Ukuran Teks (px)
+        </label>
+        <input aria-describedby="font-size-desc" class="w-full border border-gray-300 rounded-2xl px-6 py-4 text-lg focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" id="font-size" max="32" min="12" type="number" value="16"/>
+        <p class="text-sm text-gray-500 mt-2" id="font-size-desc">
+         Atur ukuran teks agar nyaman dibaca di perangkat apa pun.
+        </p>
+       </div>
+       <div>
+        <label class="block font-semibold text-gray-700 mb-3 text-lg" for="bg-color">
+         Warna Latar Belakang
+        </label>
+        <input aria-label="Pilih warna latar belakang" class="w-20 h-14 p-0 border border-gray-300 rounded-2xl cursor-pointer transition" id="bg-color" type="color" value="#f9fafb"/>
+       </div>
+       <div class="flex justify-end space-x-6 pt-8 border-t border-gray-200">
+        <button aria-label="Batal pengaturan" class="btn-secondary text-lg px-8 py-3" id="settings-cancel" type="button">
+         Batal
+        </button>
+        <button aria-label="Simpan pengaturan" class="btn-primary text-lg px-8 py-3" type="submit">
+         Simpan
+        </button>
+       </div>
+      </form>
+      <button aria-label="Tutup pengaturan" class="absolute top-6 right-6 text-gray-500 hover:text-gray-700 focus:outline-none" id="settings-close">
+       <i class="fas fa-times fa-2x"></i>
+      </button>
+     </div>
+    </div>
+   </main>
+  </div>
+  <script>
+   const contentData = {
+    candlestick: {
+      'jenis-jenis-candlestick': {
+        title: 'Jenis-jenis Candlestick',
+        content: `
+          <article class="card" aria-label="Jenis-jenis Candlestick">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-6 tracking-wide">Definisi Candlestick</h3>
+            <p class="mb-8 text-xl leading-relaxed text-gray-800">
+              Candlestick adalah metode visualisasi harga yang sangat populer dalam trading. Setiap candlestick menggambarkan pergerakan harga dalam satu periode waktu tertentu, menampilkan harga pembukaan, penutupan, tertinggi, dan terendah. Dengan memahami candlestick, trader dapat membaca sentimen pasar dan membuat keputusan trading yang lebih baik.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-5">Jenis-jenis Candlestick</h4>
+            <ul class="list-disc list-inside space-y-4 text-gray-700 mb-10 text-lg">
+              <li><strong>Marubozu:</strong> Candlestick tanpa bayangan (shadow) yang menunjukkan kekuatan tren yang sangat kuat. Marubozu hijau menandakan tekanan beli dominan, sedangkan merah menandakan tekanan jual dominan.</li>
+              <li><strong>Doji:</strong> Candlestick dengan harga pembukaan dan penutupan hampir sama, menandakan ketidakpastian pasar dan potensi pembalikan tren. Ada beberapa jenis Doji seperti Gravestone, Dragonfly, dan Long-legged Doji.</li>
+              <li><strong>Hammer:</strong> Candlestick dengan bayangan bawah panjang dan tubuh kecil di atas, biasanya muncul setelah tren turun dan menandakan potensi pembalikan naik.</li>
+              <li><strong>Shooting Star:</strong> Candlestick dengan bayangan atas panjang dan tubuh kecil di bawah, biasanya muncul setelah tren naik dan menandakan potensi pembalikan turun.</li>
+              <li><strong>Spinning Top:</strong> Candlestick dengan tubuh kecil dan bayangan atas dan bawah yang panjang, menunjukkan ketidakpastian dan keseimbangan antara pembeli dan penjual.</li>
+            </ul>
+            <figure class="mb-10">
+              <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Jenis-jenis+Candlestick+Marubozu+Doji+Hammer+Shooting+Star+Spinning+Top" alt="Ilustrasi grafik candlestick yang menunjukkan jenis-jenis candlestick seperti Marubozu, Doji, Hammer, Shooting Star, dan Spinning Top dengan warna hijau dan merah" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+              <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi jenis-jenis candlestick populer dalam trading</figcaption>
+            </figure>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-5">Mengenal Struktur Candlestick</h4>
+            <p class="mb-6 text-lg leading-relaxed text-gray-800">
+              Setiap candlestick terdiri dari <em>tubuh</em> (body) dan <em>bayangan</em> (shadow/wick). Tubuh menunjukkan rentang harga antara pembukaan dan penutupan, sedangkan bayangan menunjukkan harga tertinggi dan terendah selama periode tersebut. Warna tubuh biasanya hijau (bullish) jika harga naik, dan merah (bearish) jika harga turun.
+            </p>
+            <figure class="mb-10">
+              <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Struktur+Candlestick+Body+dan+Shadow" alt="Ilustrasi struktur candlestick yang menunjukkan bagian tubuh (body) dan bayangan (shadow) atas dan bawah dengan warna hijau dan merah" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+              <figcaption class="text-sm text-gray-500 mt-3 text-center">Struktur candlestick: tubuh dan bayangan</figcaption>
+            </figure>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-5">Tips Membaca Candlestick</h4>
+            <p class="mb-6 text-lg leading-relaxed text-gray-800">
+              Untuk membaca candlestick dengan efektif, perhatikan ukuran tubuh dan bayangan. Tubuh besar menunjukkan tekanan beli atau jual yang kuat, sedangkan bayangan panjang menunjukkan penolakan harga pada level tertentu. Kombinasikan analisis candlestick dengan volume trading untuk mendapatkan sinyal yang lebih valid.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-6 rounded-3xl shadow-inner max-w-3xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-xl mb-2">Tip Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Gunakan pola candlestick dalam konteks tren dan level support/resistance untuk meningkatkan akurasi prediksi pergerakan harga.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+      'pola-candlestick': {
+        title: 'Pola Candlestick',
+        content: `
+          <article class="card" aria-label="Pola Candlestick">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-8 tracking-wide">Pengertian Pola Candlestick</h3>
+            <p class="mb-10 text-xl leading-relaxed text-gray-800">
+              Pola candlestick adalah formasi tertentu yang terbentuk dari satu atau beberapa candlestick yang memberikan sinyal potensi pergerakan harga selanjutnya. Pola ini sangat penting untuk mengidentifikasi pembalikan atau kelanjutan tren dan menjadi alat utama dalam analisis teknikal.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-6">Pola Bullish</h4>
+            <ul class="list-disc list-inside space-y-5 text-gray-700 mb-12 text-lg">
+              <li><strong>Bullish Engulfing:</strong> Pola dua candlestick di mana candlestick hijau menelan seluruh tubuh candlestick merah sebelumnya, menandakan potensi pembalikan naik yang kuat.</li>
+              <li><strong>Morning Star:</strong> Pola tiga candlestick yang terdiri dari candlestick bearish besar, candlestick kecil (Doji atau Spinning Top), dan candlestick bullish besar, menandakan pembalikan tren dari turun ke naik.</li>
+              <li><strong>Hammer:</strong> Candlestick dengan bayangan bawah panjang dan tubuh kecil di atas, biasanya muncul setelah tren turun dan menandakan potensi pembalikan naik.</li>
+              <li><strong>Piercing Line:</strong> Pola dua candlestick di mana candlestick hijau menutup di atas titik tengah candlestick merah sebelumnya, menandakan pembalikan bullish.</li>
+            </ul>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-6">Pola Bearish</h4>
+            <ul class="list-disc list-inside space-y-5 text-gray-700 mb-12 text-lg">
+              <li><strong>Bearish Engulfing:</strong> Pola dua candlestick di mana candlestick merah menelan seluruh tubuh candlestick hijau sebelumnya, menandakan potensi pembalikan turun yang kuat.</li>
+              <li><strong>Evening Star:</strong> Pola tiga candlestick yang terdiri dari candlestick bullish besar, candlestick kecil (Doji atau Spinning Top), dan candlestick bearish besar, menandakan pembalikan tren dari naik ke turun.</li>
+              <li><strong>Shooting Star:</strong> Candlestick dengan bayangan atas panjang dan tubuh kecil di bawah, biasanya muncul setelah tren naik dan menandakan potensi pembalikan turun.</li>
+              <li><strong>Dark Cloud Cover:</strong> Pola dua candlestick di mana candlestick merah menutup di bawah titik tengah candlestick hijau sebelumnya, menandakan pembalikan bearish.</li>
+            </ul>
+            <figure class="mb-12">
+              <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Pola+Candlestick+Bullish+dan+Bearish+Lengkap" alt="Ilustrasi pola candlestick bullish dan bearish seperti Bullish Engulfing, Bearish Engulfing, Morning Star, Evening Star, Hammer, Shooting Star, Piercing Line, dan Dark Cloud Cover dengan warna hijau dan merah" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+              <figcaption class="text-sm text-gray-500 mt-4 text-center">Ilustrasi pola candlestick bullish dan bearish lengkap</figcaption>
+            </figure>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-6">Studi Kasus dan Analisis</h4>
+            <p class="mb-8 text-lg leading-relaxed text-gray-800">
+              Misalnya, setelah pola Bullish Engulfing muncul pada level support kuat dengan volume tinggi, ini menjadi sinyal kuat untuk membuka posisi beli. Sebaliknya, pola Bearish Engulfing pada resistance kuat dengan konfirmasi volume tinggi dapat menjadi sinyal jual yang efektif.
+            </p>
+            <p class="mb-8 text-lg leading-relaxed text-gray-800">
+              Penting untuk mengkonfirmasi pola dengan indikator lain seperti RSI, MACD, atau volume untuk menghindari sinyal palsu dan meningkatkan probabilitas keberhasilan trading.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-8 rounded-3xl shadow-inner max-w-4xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-2xl mb-3">Tip Ultra Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Gabungkan pola candlestick dengan analisis multi-timeframe dan level support/resistance untuk mendapatkan sinyal trading yang sangat akurat dan mengurangi risiko.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+    },
+    teknikal: {
+      'indikator-teknikal': {
+        title: 'Indikator Teknikal',
+        content: `
+          <article class="card" aria-label="Indikator Teknikal">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-8 tracking-wide">Definisi Indikator Teknikal</h3>
+            <p class="mb-10 text-xl leading-relaxed text-gray-800">
+              Indikator teknikal adalah alat bantu analisis yang menggunakan data harga dan volume untuk memprediksi pergerakan harga di masa depan. Indikator ini membantu trader mengidentifikasi tren, momentum, volatilitas, dan kondisi pasar yang tidak terlihat secara langsung dari grafik harga.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Jenis-jenis Indikator dan Penjelasan Lengkap</h4>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-3">Moving Average (MA)</h5>
+              <p class="mb-5 text-lg leading-relaxed text-gray-800">
+                Moving Average adalah indikator yang menghaluskan data harga dengan menghitung rata-rata harga dalam periode tertentu. MA membantu mengidentifikasi arah tren dan level support/resistance dinamis. Ada beberapa jenis MA, seperti Simple Moving Average (SMA) dan Exponential Moving Average (EMA).
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Moving+Average+SMA+dan+EMA" alt="Ilustrasi grafik harga dengan indikator Moving Average Simple dan Exponential berwarna biru dan merah" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi Moving Average SMA dan EMA pada grafik harga</figcaption>
+              </figure>
+            </section>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-3">Relative Strength Index (RSI)</h5>
+              <p class="mb-5 text-lg leading-relaxed text-gray-800">
+                RSI adalah indikator momentum yang mengukur kecepatan dan perubahan pergerakan harga. RSI bernilai antara 0 hingga 100, dengan nilai di atas 70 menandakan kondisi overbought dan di bawah 30 menandakan oversold. RSI membantu trader mengidentifikasi potensi pembalikan harga.
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Grafik+RSI+Dengan+Level+Overbought+dan+Oversold" alt="Ilustrasi grafik RSI dengan level overbought di 70 dan oversold di 30" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi grafik RSI dengan level overbought dan oversold</figcaption>
+              </figure>
+            </section>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-3">Bollinger Bands</h5>
+              <p class="mb-5 text-lg leading-relaxed text-gray-800">
+                Bollinger Bands terdiri dari tiga garis: moving average tengah dan dua pita atas dan bawah yang menunjukkan volatilitas pasar. Ketika harga mendekati pita atas, pasar dianggap overbought, dan ketika mendekati pita bawah, pasar dianggap oversold. Bollinger Bands membantu mengidentifikasi breakout dan retracement.
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Grafik+Bollinger+Bands+Dengan+Pita+Atas+Dan+Bawah" alt="Ilustrasi grafik Bollinger Bands dengan pita atas dan bawah berwarna biru dan merah" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi Bollinger Bands pada grafik harga</figcaption>
+              </figure>
+            </section>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-3">MACD (Moving Average Convergence Divergence)</h5>
+              <p class="mb-5 text-lg leading-relaxed text-gray-800">
+                MACD adalah indikator momentum yang menunjukkan hubungan antara dua moving average harga. MACD membantu mengidentifikasi perubahan tren dan momentum dengan menggunakan garis MACD, garis sinyal, dan histogram.
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Grafik+MACD+Dengan+Garis+MACD+Dan+Histogram" alt="Ilustrasi grafik MACD dengan garis MACD, garis sinyal, dan histogram berwarna hijau dan merah" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi MACD pada grafik harga</figcaption>
+              </figure>
+            </section>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-6">Tips Menggunakan Indikator</h4>
+            <p class="mb-8 text-lg leading-relaxed text-gray-800">
+              Gunakan kombinasi indikator untuk konfirmasi sinyal dan hindari terlalu banyak indikator agar analisis tetap sederhana dan efektif. Sesuaikan parameter indikator dengan karakteristik aset dan timeframe trading Anda. Selalu perhatikan konteks pasar dan jangan mengandalkan indikator secara tunggal.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-8 rounded-3xl shadow-inner max-w-4xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-2xl mb-3">Tip Ultra Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Pelajari cara membaca divergensi pada indikator seperti RSI dan MACD untuk mendeteksi potensi pembalikan tren lebih awal.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+      'chart-pattern': {
+        title: 'Chart Pattern',
+        content: `
+          <article class="card" aria-label="Chart Pattern">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-8 tracking-wide">Pengertian Chart Pattern</h3>
+            <p class="mb-10 text-xl leading-relaxed text-gray-800">
+              Chart pattern adalah pola-pola tertentu yang terbentuk pada grafik harga yang dapat memberikan sinyal kelanjutan atau pembalikan tren. Pola ini sangat berguna untuk mengantisipasi pergerakan harga selanjutnya dan menjadi alat penting dalam analisis teknikal.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Jenis Chart Pattern dan Penjelasan Lengkap</h4>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-4">Head and Shoulders</h5>
+              <p class="mb-6 text-lg leading-relaxed text-gray-800">
+                Pola pembalikan tren yang terdiri dari tiga puncak: bahu kiri, kepala (puncak tertinggi), dan bahu kanan. Pola ini menandakan potensi pembalikan tren naik menjadi turun (head and shoulders biasa) atau tren turun menjadi naik (inverse head and shoulders).
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Head+and+Shoulders+dan+Inverse+Head+and+Shoulders" alt="Ilustrasi pola chart pattern Head and Shoulders dan Inverse Head and Shoulders pada grafik harga" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi pola Head and Shoulders dan Inverse Head and Shoulders</figcaption>
+              </figure>
+            </section>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-4">Double Top dan Double Bottom</h5>
+              <p class="mb-6 text-lg leading-relaxed text-gray-800">
+                Pola pembalikan tren yang menunjukkan dua puncak (double top) atau dua lembah (double bottom) pada level resistance atau support yang sama. Pola ini menandakan bahwa tren sebelumnya akan berbalik arah.
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Double+Top+dan+Double+Bottom" alt="Ilustrasi pola chart pattern Double Top dan Double Bottom pada grafik harga" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi pola Double Top dan Double Bottom</figcaption>
+              </figure>
+            </section>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-4">Triangle (Symmetrical, Ascending, Descending)</h5>
+              <p class="mb-6 text-lg leading-relaxed text-gray-800">
+                Pola kelanjutan tren yang menunjukkan konsolidasi harga dalam bentuk segitiga. Symmetrical triangle menunjukkan ketidakpastian, ascending triangle biasanya pola kelanjutan bullish, dan descending triangle biasanya pola kelanjutan bearish.
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Triangle+Pattern+Symmetrical+Ascending+Descending" alt="Ilustrasi pola chart pattern Triangle Symmetrical, Ascending, dan Descending pada grafik harga" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi pola Triangle Symmetrical, Ascending, dan Descending</figcaption>
+              </figure>
+            </section>
+            <section class="mb-10">
+              <h5 class="text-2xl font-semibold text-indigo-700 mb-4">Flag dan Pennant</h5>
+              <p class="mb-6 text-lg leading-relaxed text-gray-800">
+                Pola kelanjutan tren yang biasanya terjadi setelah pergerakan harga yang kuat (flagpole). Flag berbentuk persegi panjang miring, sedangkan pennant berbentuk segitiga kecil. Pola ini menandakan jeda sementara sebelum tren berlanjut.
+              </p>
+              <figure class="mb-6">
+                <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Flag+dan+Pennant+Pattern" alt="Ilustrasi pola chart pattern Flag dan Pennant pada grafik harga" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+                <figcaption class="text-sm text-gray-500 mt-3 text-center">Ilustrasi pola Flag dan Pennant</figcaption>
+              </figure>
+            </section>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Studi Kasus dan Analisis</h4>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Misalnya, pola Head and Shoulders yang terbentuk setelah tren naik dengan volume menurun pada bahu kanan dapat menjadi sinyal pembalikan ke tren turun. Pola Triangle yang terbentuk selama konsolidasi dengan volume menurun biasanya diikuti oleh breakout kuat sesuai arah tren sebelumnya.
+            </p>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Penting untuk mengkonfirmasi pola dengan indikator volume dan momentum agar sinyal lebih valid dan mengurangi risiko false breakout.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-8 rounded-3xl shadow-inner max-w-4xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-2xl mb-4">Tip Ultra Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Gunakan analisis multi-timeframe untuk mengkonfirmasi pola chart pattern dan tingkatkan akurasi prediksi pergerakan harga.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+    },
+    risiko: {
+      'pengaturan-stop-loss': {
+        title: 'Pengaturan Stop-Loss',
+        content: `
+          <article class="card" aria-label="Pengaturan Stop-Loss">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-8 tracking-wide">Definisi Stop-Loss</h3>
+            <p class="mb-10 text-xl leading-relaxed text-gray-800">
+              Stop-loss adalah perintah otomatis untuk menutup posisi trading pada harga tertentu guna membatasi kerugian. Stop-loss adalah alat penting dalam manajemen risiko yang membantu trader melindungi modal dan menghindari kerugian besar.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Strategi Penempatan Stop-Loss</h4>
+            <ul class="list-disc list-inside space-y-6 text-gray-700 mb-12 text-lg">
+              <li>Letakkan stop-loss di bawah level support untuk posisi beli dan di atas level resistance untuk posisi jual agar memberikan ruang bagi fluktuasi harga normal.</li>
+              <li>Gunakan persentase risiko tertentu dari modal, misalnya 1-2% per posisi, untuk menjaga konsistensi manajemen risiko.</li>
+              <li>Perhatikan volatilitas pasar dengan menggunakan indikator seperti Average True Range (ATR) agar stop-loss tidak terlalu ketat dan menghindari tersentuh oleh noise pasar.</li>
+              <li>Sesuaikan stop-loss dengan timeframe trading Anda; timeframe lebih tinggi biasanya memerlukan stop-loss yang lebih lebar.</li>
+            </ul>
+            <figure class="mb-12">
+              <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Penempatan+Stop-Loss+di+Support+dan+Resistance" alt="Ilustrasi grafik trading dengan garis stop-loss berwarna merah ditempatkan di bawah support dan di atas resistance pada grafik candlestick" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+              <figcaption class="text-sm text-gray-500 mt-4 text-center">Ilustrasi penempatan stop-loss pada grafik trading</figcaption>
+            </figure>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Tips dan Praktik Terbaik</h4>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Selalu gunakan stop-loss untuk melindungi modal dan disiplin dalam mengikuti aturan manajemen risiko. Jangan pernah memindahkan stop-loss ke posisi yang lebih berisiko kecuali ada alasan teknikal yang kuat. Gunakan trailing stop untuk mengunci profit saat harga bergerak sesuai arah posisi.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-8 rounded-3xl shadow-inner max-w-4xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-2xl mb-4">Tip Ultra Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Gunakan ATR untuk menentukan jarak stop-loss yang optimal sesuai volatilitas pasar dan timeframe trading Anda.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+      'manajemen-posisi': {
+        title: 'Manajemen Posisi',
+        content: `
+          <article class="card" aria-label="Manajemen Posisi">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-8 tracking-wide">Pengertian Manajemen Posisi</h3>
+            <p class="mb-10 text-xl leading-relaxed text-gray-800">
+              Manajemen posisi adalah teknik mengatur ukuran dan jumlah posisi trading agar risiko tetap terkendali dan modal tidak cepat habis. Manajemen posisi yang baik adalah kunci keberhasilan jangka panjang dalam trading.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Prinsip Manajemen Posisi</h4>
+            <ul class="list-disc list-inside space-y-6 text-gray-700 mb-12 text-lg">
+              <li>Tentukan ukuran posisi berdasarkan risiko yang dapat diterima, biasanya 1-2% dari total modal per posisi.</li>
+              <li>Jangan menempatkan semua modal dalam satu posisi untuk menghindari risiko besar akibat satu kesalahan.</li>
+              <li>Gunakan diversifikasi aset dan strategi untuk mengurangi risiko keseluruhan portofolio.</li>
+              <li>Sesuaikan ukuran posisi dengan volatilitas aset dan timeframe trading.</li>
+              <li>Gunakan kalkulator risiko untuk menghitung ukuran posisi yang tepat berdasarkan stop-loss dan modal.</li>
+            </ul>
+            <figure class="mb-12">
+              <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Manajemen+Posisi+Trading+Dengan+Diagram+Ukuran+Posisi+dan+Risiko" alt="Ilustrasi diagram manajemen posisi trading yang menunjukkan pembagian modal dan risiko pada beberapa posisi trading berbeda" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+              <figcaption class="text-sm text-gray-500 mt-4 text-center">Ilustrasi manajemen posisi dan risiko trading</figcaption>
+            </figure>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Studi Kasus dan Contoh Perhitungan</h4>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Jika modal Anda 10 juta rupiah dan risiko per posisi 2%, maka maksimal kerugian yang diperbolehkan adalah 200 ribu rupiah per posisi. Jika stop-loss Anda 50 pips, maka ukuran lot yang sesuai dapat dihitung agar risiko tidak melebihi batas tersebut.
+            </p>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Contoh: Risiko per pip = 200.000 / 50 = 4.000 rupiah per pip. Sesuaikan ukuran lot agar risiko per pip sesuai dengan perhitungan ini.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-8 rounded-3xl shadow-inner max-w-4xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-2xl mb-4">Tip Ultra Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Gunakan spreadsheet atau aplikasi kalkulator risiko untuk memudahkan perhitungan ukuran posisi dan risiko secara akurat.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+    },
+    strategi: {
+      'strategi-breakout': {
+        title: 'Strategi Breakout',
+        content: `
+          <article class="card" aria-label="Strategi Breakout">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-8 tracking-wide">Definisi Strategi Breakout</h3>
+            <p class="mb-10 text-xl leading-relaxed text-gray-800">
+              Strategi breakout adalah teknik trading yang memanfaatkan momen harga menembus level support atau resistance penting untuk membuka posisi dengan potensi pergerakan harga yang kuat dan signifikan. Breakout menandakan perubahan sentimen pasar dan sering diikuti oleh volume tinggi.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Cara Kerja Strategi Breakout</h4>
+            <ol class="list-decimal list-inside space-y-6 text-gray-700 mb-12 text-lg">
+              <li>Identifikasi level support dan resistance yang kuat berdasarkan analisis teknikal dan volume.</li>
+              <li>Tunggu harga menembus level tersebut dengan konfirmasi volume yang meningkat signifikan.</li>
+              <li>Buka posisi sesuai arah breakout dengan stop-loss ditempatkan di dekat level breakout untuk membatasi risiko.</li>
+              <li>Gunakan target profit berdasarkan ukuran range konsolidasi atau level support/resistance berikutnya.</li>
+            </ol>
+            <figure class="mb-12">
+              <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Strategi+Breakout+Dengan+Grafik+Candlestick+Menembus+Resistance" alt="Ilustrasi grafik candlestick yang menunjukkan breakout harga menembus resistance dengan volume tinggi dan sinyal beli" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+              <figcaption class="text-sm text-gray-500 mt-4 text-center">Ilustrasi breakout harga menembus resistance dengan volume tinggi</figcaption>
+            </figure>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Tips dan Strategi Lanjutan</h4>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Konfirmasi breakout dengan volume dan indikator lain seperti RSI atau MACD agar sinyal lebih valid dan mengurangi false breakout. Gunakan time frame yang lebih tinggi untuk konfirmasi dan hindari trading breakout pada saat volatilitas sangat rendah.
+            </p>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Gunakan trailing stop untuk mengunci profit saat harga bergerak sesuai arah breakout dan pertimbangkan untuk menambah posisi jika breakout terbukti kuat.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-8 rounded-3xl shadow-inner max-w-4xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-2xl mb-4">Tip Ultra Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Pelajari pola false breakout dan gunakan filter tambahan seperti volume dan konfirmasi multi-timeframe untuk menghindari kerugian.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+      'strategi-reversal': {
+        title: 'Strategi Reversal',
+        content: `
+          <article class="card" aria-label="Strategi Reversal">
+            <h3 class="text-4xl font-bold text-indigo-700 mb-8 tracking-wide">Definisi Strategi Reversal</h3>
+            <p class="mb-10 text-xl leading-relaxed text-gray-800">
+              Strategi reversal adalah teknik trading yang mencari sinyal pembalikan tren untuk membuka posisi berlawanan dengan tren sebelumnya. Strategi ini menuntut ketelitian tinggi dan konfirmasi kuat agar tidak terjebak dalam false reversal.
+            </p>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Cara Kerja Strategi Reversal</h4>
+            <ol class="list-decimal list-inside space-y-6 text-gray-700 mb-12 text-lg">
+              <li>Identifikasi tren yang sedang berlangsung dan level support/resistance penting.</li>
+              <li>Gunakan pola candlestick, indikator momentum, dan chart pattern untuk mendeteksi potensi pembalikan.</li>
+              <li>Buka posisi setelah konfirmasi sinyal pembalikan dengan stop-loss ketat untuk membatasi risiko.</li>
+              <li>Targetkan profit pada level support/resistance berikutnya atau berdasarkan rasio risk-reward yang baik.</li>
+            </ol>
+            <figure class="mb-12">
+              <img src="https://placehold.co/1000x500/png?text=Ilustrasi+Strategi+Reversal+Dengan+Pola+Candlestick+Hammer+dan+Shooting+Star" alt="Ilustrasi grafik candlestick yang menunjukkan pola reversal seperti Hammer dan Shooting Star dengan sinyal pembalikan tren" class="rounded-3xl shadow-2xl w-full" loading="lazy" decoding="async" />
+              <figcaption class="text-sm text-gray-500 mt-4 text-center">Ilustrasi pola reversal Hammer dan Shooting Star pada grafik candlestick</figcaption>
+            </figure>
+            <h4 class="text-3xl font-semibold text-indigo-600 mb-7">Tips dan Praktik Terbaik</h4>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Gunakan strategi reversal dengan hati-hati dan pastikan ada konfirmasi sinyal dari beberapa indikator dan pola chart. Perhatikan volume dan momentum untuk menghindari false reversal. Gunakan stop-loss ketat dan manajemen risiko yang disiplin.
+            </p>
+            <p class="mb-10 text-lg leading-relaxed text-gray-800">
+              Kombinasikan analisis multi-timeframe untuk mendapatkan gambaran tren yang lebih jelas dan validasi sinyal pembalikan.
+            </p>
+            <div class="bg-indigo-50 border-l-8 border-indigo-600 p-8 rounded-3xl shadow-inner max-w-4xl mx-auto">
+              <p class="font-semibold text-indigo-700 text-2xl mb-4">Tip Ultra Pro:</p>
+              <p class="text-indigo-900 text-lg leading-relaxed">
+                Pelajari psikologi pasar dan sentimen trader untuk memahami konteks pembalikan dan meningkatkan akurasi strategi reversal.
+              </p>
+            </div>
+          </article>
+        `,
+      },
+    },
+    glosarium: {
+      title: 'Glosarium Istilah Trading',
+      content: `
+        <article class="card" aria-label="Glosarium Istilah Trading">
+          <h3 class="text-4xl font-bold text-indigo-700 mb-10 tracking-wide">Glosarium Istilah Trading</h3>
+          <dl class="space-y-10 text-gray-800 text-lg max-w-5xl mx-auto">
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Candlestick</dt>
+              <dd>Representasi grafis harga yang menunjukkan harga pembukaan, penutupan, tertinggi, dan terendah dalam periode waktu tertentu. Digunakan untuk membaca sentimen pasar dan pola harga.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Support</dt>
+              <dd>Level harga di mana permintaan dianggap cukup kuat untuk mencegah harga turun lebih jauh. Sering menjadi titik pembalikan harga naik.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Resistance</dt>
+              <dd>Level harga di mana penawaran dianggap cukup kuat untuk mencegah harga naik lebih jauh. Sering menjadi titik pembalikan harga turun.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Stop-Loss</dt>
+              <dd>Perintah untuk menutup posisi secara otomatis pada harga tertentu guna membatasi kerugian dan melindungi modal.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Breakout</dt>
+              <dd>Harga yang menembus level support atau resistance penting, menandakan potensi pergerakan harga yang kuat dan signifikan.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Overbought</dt>
+              <dd>Kondisi pasar di mana harga dianggap sudah terlalu tinggi dan berpotensi turun, biasanya diindikasikan oleh indikator seperti RSI di atas 70.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Oversold</dt>
+              <dd>Kondisi pasar di mana harga dianggap sudah terlalu rendah dan berpotensi naik, biasanya diindikasikan oleh indikator seperti RSI di bawah 30.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Volume</dt>
+              <dd>Jumlah saham atau kontrak yang diperdagangkan dalam periode waktu tertentu. Volume tinggi biasanya mengkonfirmasi kekuatan pergerakan harga.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Volatilitas</dt>
+              <dd>Ukuran fluktuasi harga dalam periode waktu tertentu. Volatilitas tinggi menunjukkan pergerakan harga yang besar dan risiko yang lebih tinggi.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Risk-Reward Ratio</dt>
+              <dd>Perbandingan antara potensi risiko dan potensi keuntungan dalam sebuah trading. Rasio yang baik biasanya minimal 1:2.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Trailing Stop</dt>
+              <dd>Stop-loss yang bergerak mengikuti harga pasar untuk mengunci profit saat harga bergerak sesuai arah posisi.</dd>
+            </div>
+            <div>
+              <dt class="font-semibold text-2xl text-indigo-600 mb-3">Divergensi</dt>
+              <dd>Perbedaan arah antara harga dan indikator momentum yang dapat menandakan potensi pembalikan tren.</dd>
+            </div>
+          </dl>
+        </article>
+      `,
+    },
+    referensi: {
+      title: 'Referensi & Sumber Daya',
+      content: `
+        <article class="card" aria-label="Referensi dan Sumber Daya Tambahan">
+          <h3 class="text-4xl font-bold text-indigo-700 mb-10 tracking-wide">Referensi & Sumber Daya Tambahan</h3>
+          <ul class="list-disc list-inside space-y-5 text-indigo-700 text-xl font-semibold max-w-4xl mx-auto">
+            <li><a href="https://www.investopedia.com/terms/c/candlestick.asp" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="Investopedia Candlestick">Investopedia - Candlestick</a></li>
+            <li><a href="https://www.tradingview.com/ideas/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="TradingView Ide Trading dan Analisis">TradingView - Ide Trading dan Analisis</a></li>
+            <li><a href="https://www.babypips.com/learn/forex" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="Babypips Forex Education">Babypips - Forex Education</a></li>
+            <li><a href="https://www.tradingstrategyguides.com/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="Trading Strategy Guides">Trading Strategy Guides</a></li>
+            <li><a href="https://www.fxstreet.com/education" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="FXStreet Education">FXStreet - Education</a></li>
+            <li><a href="https://www.chartpattern.com/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="ChartPattern.com">ChartPattern.com</a></li>
+            <li><a href="https://www.investopedia.com/terms/m/marketprofile.asp" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="Investopedia Market Profile">Investopedia - Market Profile</a></li>
+            <li><a href="https://www.traderslibrary.com/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="Traders Library">Traders Library</a></li>
+            <li><a href="https://www.quantpedia.com/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="Quantpedia">Quantpedia</a></li>
+            <li><a href="https://www.cmegroup.com/education.html" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900" aria-label="CME Group Education">CME Group - Education</a></li>
+          </ul>
+        </article>
+      `,
+    },
+    template: {
+      title: 'Template Trading Plan',
+      content: `
+        <article class="card" aria-label="Template Trading Plan">
+          <h3 class="text-4xl font-bold text-indigo-700 mb-10 tracking-wide">Template Trading Plan</h3>
+          <p class="mb-10 text-xl leading-relaxed text-gray-800 max-w-4xl mx-auto">
+            Rencana trading yang terstruktur adalah kunci untuk disiplin dan konsistensi dalam trading. Gunakan template ini untuk merencanakan aktivitas trading Anda secara detail dan simpan di browser untuk akses mudah.
+          </p>
+          <form class="space-y-10 mt-6 max-w-4xl mx-auto" id="trading-plan-form" novalidate>
+            <div>
+              <label for="trading-goal" class="block font-semibold mb-3 text-gray-700 text-lg">Tujuan Trading</label>
+              <textarea id="trading-goal" rows="4" class="w-full border border-gray-300 rounded-3xl p-5 text-lg focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" placeholder="Misal: Mencapai profit 10% per bulan dengan risiko maksimal 2% per posisi" aria-describedby="goal-desc"></textarea>
+              <p id="goal-desc" class="text-sm text-gray-500 mt-2 max-w-prose">Tuliskan tujuan trading Anda secara spesifik, terukur, dan realistis.</p>
+            </div>
+            <div>
+              <label for="risk-management" class="block font-semibold mb-3 text-gray-700 text-lg">Manajemen Risiko</label>
+              <textarea id="risk-management" rows="4" class="w-full border border-gray-300 rounded-3xl p-5 text-lg focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" placeholder="Misal: Risiko maksimal 2% dari modal per posisi, gunakan stop-loss dan trailing stop" aria-describedby="risk-desc"></textarea>
+              <p id="risk-desc" class="text-sm text-gray-500 mt-2 max-w-prose">Jelaskan aturan manajemen risiko yang akan Anda terapkan secara rinci.</p>
+            </div>
+            <div>
+              <label for="strategi-trading" class="block font-semibold mb-3 text-gray-700 text-lg">Strategi Trading</label>
+              <textarea id="strategi-trading" rows="6" class="w-full border border-gray-300 rounded-3xl p-5 text-lg focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" placeholder="Misal: Strategi breakout pada timeframe 1 jam dengan konfirmasi volume dan RSI" aria-describedby="strategy-desc"></textarea>
+              <p id="strategy-desc" class="text-sm text-gray-500 mt-2 max-w-prose">Detailkan strategi trading yang akan Anda gunakan, termasuk indikator dan pola yang diandalkan.</p>
+            </div>
+            <div>
+              <label for="jadwal-trading" class="block font-semibold mb-3 text-gray-700 text-lg">Jadwal Trading</label>
+              <textarea id="jadwal-trading" rows="4" class="w-full border border-gray-300 rounded-3xl p-5 text-lg focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" placeholder="Misal: Trading pada sesi Asia dan Eropa, hindari sesi Amerika jika volatilitas rendah" aria-describedby="schedule-desc"></textarea>
+              <p id="schedule-desc" class="text-sm text-gray-500 mt-2 max-w-prose">Tentukan waktu trading yang Anda prioritaskan dan alasan pemilihannya.</p>
+            </div>
+            <div>
+              <label for="evaluasi" class="block font-semibold mb-3 text-gray-700 text-lg">Evaluasi dan Catatan</label>
+              <textarea id="evaluasi" rows="6" class="w-full border border-gray-300 rounded-3xl p-5 text-lg focus:outline-none focus:ring-4 focus:ring-indigo-400 transition" placeholder="Misal: Catatan hasil trading, kesalahan, dan perbaikan yang perlu dilakukan" aria-describedby="evaluation-desc"></textarea>
+              <p id="evaluation-desc" class="text-sm text-gray-500 mt-2 max-w-prose">Catat hasil dan pelajaran dari aktivitas trading Anda untuk evaluasi berkala.</p>
+            </div>
+            <div class="flex justify-end space-x-8">
+              <button type="button" id="clear-plan" class="btn-secondary text-lg px-10 py-4 rounded-3xl" aria-label="Bersihkan rencana trading">Bersihkan</button>
+              <button type="submit" id="save-plan" class="btn-primary text-lg px-10 py-4 rounded-3xl" aria-label="Simpan rencana trading">Simpan Rencana</button>
+            </div>
+          </form>
+          <div id="save-message" class="mt-10 text-green-700 font-semibold text-xl hidden" role="alert" aria-live="assertive" tabindex="0">
+            Rencana trading berhasil disimpan di browser Anda.
+          </div>
+        </article>
+      `,
+    },
+  };
+
+  const sidebar = document.getElementById('sidebar');
+  const content = document.getElementById('topic-content');
+  const welcomeSection = document.getElementById('welcome');
+  const settingsBtn = document.getElementById('settings-btn');
+  const settingsModal = document.getElementById('settings-modal');
+  const settingsClose = document.getElementById('settings-close');
+  const settingsCancel = document.getElementById('settings-cancel');
+  const settingsForm = document.getElementById('settings-form');
+  const fontSelect = document.getElementById('font-select');
+  const fontSizeInput = document.getElementById('font-size');
+  const bgColorInput = document.getElementById('bg-color');
+  const savePlanBtn = document.getElementById('save-plan');
+  const clearPlanBtn = document.getElementById('clear-plan');
+  const saveMessage = document.getElementById('save-message');
+  const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
+
+  function toggleSubmenu(button) {
+    const controls = button.getAttribute('aria-controls');
+    if (!controls) return;
+    const submenu = document.getElementById(controls);
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', !expanded);
+    if (!expanded) {
+      submenu.style.maxHeight = submenu.scrollHeight + 'px';
+      button.querySelector('i').classList.add('rotate-180');
+      submenu.classList.add('open');
+    } else {
+      submenu.style.maxHeight = '0';
+      button.querySelector('i').classList.remove('rotate-180');
+      submenu.classList.remove('open');
+    }
+  }
+
+  sidebar.querySelectorAll('nav > ul > li > button').forEach((btn) => {
+    btn.addEventListener('click', () => toggleSubmenu(btn));
+  });
+
+  function loadContent(topic, subtopic) {
+    welcomeSection.classList.add('hidden');
+    content.classList.remove('fade-in');
+    void content.offsetWidth;
+    content.classList.add('fade-in');
+    content.innerHTML = '';
+    if (topic === 'glosarium') {
+      content.innerHTML = contentData.glosarium.content;
+      content.querySelector('article').focus();
+      return;
+    }
+    if (topic === 'referensi') {
+      content.innerHTML = contentData.referensi.content;
+      content.querySelector('article').focus();
+      return;
+    }
+    if (topic === 'template') {
+      content.innerHTML = contentData.template.content;
+      content.querySelector('article').focus();
+      attachTemplateSaveHandler();
+      return;
+    }
+    if (contentData[topic] && contentData[topic][subtopic]) {
+      const data = contentData[topic][subtopic];
+      content.innerHTML = `<h2 class="text-5xl font-extrabold text-indigo-700 mb-10 tracking-wide">${data.title}</h2>${data.content}`;
+      content.querySelector('h2').focus();
+    } else {
+      content.innerHTML = '<p class="text-lg text-red-700 font-semibold">Konten tidak ditemukan.</p>';
+    }
+  }
+
+  sidebar.querySelectorAll('.submenu-item').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const topic = btn.getAttribute('data-topic');
+      const subtopic = btn.getAttribute('data-subtopic');
+      loadContent(topic, subtopic);
+      if (window.innerWidth < 768) {
+        sidebar.classList.add('hidden');
+        sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+      }
+    });
+  });
+
+  document.getElementById('glosarium-btn').addEventListener('click', () => {
+    loadContent('glosarium');
+    if (window.innerWidth < 768) {
+      sidebar.classList.add('hidden');
+      sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+    }
+  });
+  document.getElementById('referensi-btn').addEventListener('click', () => {
+    loadContent('referensi');
+    if (window.innerWidth < 768) {
+      sidebar.classList.add('hidden');
+      sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+    }
+  });
+  document.getElementById('template-btn').addEventListener('click', () => {
+    loadContent('template');
+    if (window.innerWidth < 768) {
+      sidebar.classList.add('hidden');
+      sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+    }
+  });
+
+  settingsBtn.addEventListener('click', () => {
+    settingsModal.classList.remove('hidden');
+    const savedFont = localStorage.getItem('ebook-font-family');
+    const savedSize = localStorage.getItem('ebook-font-size');
+    const savedBg = localStorage.getItem('ebook-bg-color');
+    if (savedFont) fontSelect.value = savedFont;
+    if (savedSize) fontSizeInput.value = savedSize;
+    if (savedBg) bgColorInput.value = savedBg;
+    fontSelect.focus();
+  });
+  settingsClose.addEventListener('click', () => {
+    settingsModal.classList.add('hidden');
+    settingsBtn.focus();
+  });
+  settingsCancel.addEventListener('click', () => {
+    settingsModal.classList.add('hidden');
+    settingsBtn.focus();
+  });
+  settingsModal.addEventListener('click', (e) => {
+    if (e.target === settingsModal) {
+      settingsModal.classList.add('hidden');
+      settingsBtn.focus();
+    }
+  });
+
+  function applySettings(fontFamily, fontSize, bgColor) {
+    document.body.style.fontFamily = fontFamily;
+    document.body.style.fontSize = fontSize + 'px';
+    document.body.style.backgroundColor = bgColor;
+  }
+
+  window.addEventListener('load', () => {
+    const savedFont = localStorage.getItem('ebook-font-family') || "'Inter', sans-serif";
+    const savedSize = localStorage.getItem('ebook-font-size') || "16";
+    const savedBg = localStorage.getItem('ebook-bg-color') || "#f9fafb";
+    applySettings(savedFont, savedSize, savedBg);
+    fontSelect.value = savedFont;
+    fontSizeInput.value = savedSize;
+    bgColorInput.value = savedBg;
+  });
+
+  settingsForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const fontFamily = fontSelect.value;
+    const fontSize = fontSizeInput.value;
+    const bgColor = bgColorInput.value;
+    localStorage.setItem('ebook-font-family', fontFamily);
+    localStorage.setItem('ebook-font-size', fontSize);
+    localStorage.setItem('ebook-bg-color', bgColor);
+    applySettings(fontFamily, fontSize, bgColor);
+    settingsModal.classList.add('hidden');
+    settingsBtn.focus();
+  });
+
+  function attachTemplateSaveHandler() {
+    saveMessage.classList.add('hidden');
+    const form = document.getElementById('trading-plan-form');
+    const goal = document.getElementById('trading-goal');
+    const risk = document.getElementById('risk-management');
+    const strategy = document.getElementById('strategi-trading');
+    const schedule = document.getElementById('jadwal-trading');
+    const evaluation = document.getElementById('evaluasi');
+
+    const savedPlan = localStorage.getItem('trading-plan');
+    if (savedPlan) {
+      const plan = JSON.parse(savedPlan);
+      goal.value = plan.tujuan || '';
+      risk.value = plan.risiko || '';
+      strategy.value = plan.strategi || '';
+      schedule.value = plan.jadwal || '';
+      evaluation.value = plan.evaluasi || '';
+    }
+
+    form.onsubmit = (e) => {
+      e.preventDefault();
+      const plan = {
+        tujuan: goal.value.trim(),
+        risiko: risk.value.trim(),
+        strategi: strategy.value.trim(),
+        jadwal: schedule.value.trim(),
+        evaluasi: evaluation.value.trim(),
+      };
+      localStorage.setItem('trading-plan', JSON.stringify(plan));
+      saveMessage.classList.remove('hidden');
+      saveMessage.focus();
+      setTimeout(() => {
+        saveMessage.classList.add('hidden');
+      }, 6000);
+    };
+
+    clearPlanBtn.onclick = () => {
+      goal.value = '';
+      risk.value = '';
+      strategy.value = '';
+      schedule.value = '';
+      evaluation.value = '';
+      localStorage.removeItem('trading-plan');
+      saveMessage.textContent = 'Rencana trading telah dibersihkan.';
+      saveMessage.classList.remove('hidden');
+      saveMessage.focus();
+      setTimeout(() => {
+        saveMessage.classList.add('hidden');
+        saveMessage.textContent = 'Rencana trading berhasil disimpan di browser Anda.';
+      }, 6000);
+    };
+  }
+
+  const sidebarToggleBtn = document.createElement('button');
+  sidebarToggleBtn.setAttribute('aria-label', 'Toggle menu');
+  sidebarToggleBtn.className =
+    'fixed top-5 left-5 z-50 p-4 rounded-3xl bg-indigo-600 text-white shadow-2xl md:hidden focus:outline-none focus:ring-4 focus:ring-indigo-400 transition';
+  sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+  document.body.appendChild(sidebarToggleBtn);
+
+  sidebarToggleBtn.addEventListener('click', () => {
+    if (sidebar.classList.contains('hidden')) {
+      sidebar.classList.remove('hidden');
+      sidebarToggleBtn.innerHTML = '<i class="fas fa-times fa-lg"></i>';
+      sidebarToggleBtn.setAttribute('aria-label', 'Tutup menu');
+    } else {
+      sidebar.classList.add('hidden');
+      sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+      sidebarToggleBtn.setAttribute('aria-label', 'Buka menu');
+    }
+  });
+
+  sidebarCloseBtn.addEventListener('click', () => {
+    sidebar.classList.add('hidden');
+    sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+    sidebarToggleBtn.setAttribute('aria-label', 'Buka menu');
+    sidebarToggleBtn.focus();
+  });
+
+  function handleResize() {
+    if (window.innerWidth < 768) {
+      sidebar.classList.add('hidden');
+      sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+      sidebarToggleBtn.setAttribute('aria-label', 'Buka menu');
+    } else {
+      sidebar.classList.remove('hidden');
+      sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+      sidebarToggleBtn.setAttribute('aria-label', 'Toggle menu');
+    }
+  }
+  window.addEventListener('resize', handleResize);
+  handleResize();
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (!settingsModal.classList.contains('hidden')) {
+        settingsModal.classList.add('hidden');
+        settingsBtn.focus();
+      }
+      if (window.innerWidth < 768 && !sidebar.classList.contains('hidden')) {
+        sidebar.classList.add('hidden');
+        sidebarToggleBtn.innerHTML = '<i class="fas fa-bars fa-lg"></i>';
+        sidebarToggleBtn.setAttribute('aria-label', 'Buka menu');
+        sidebarToggleBtn.focus();
+      }
+    }
+  });
+
+  window.addEventListener('load', () => {
+    document.querySelector('#welcome h2').setAttribute('tabindex', '-1');
+    document.querySelector('#welcome h2').focus();
+  });
+  </script>
+ </body>
+</html>
